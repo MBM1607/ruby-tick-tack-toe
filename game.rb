@@ -13,8 +13,14 @@ class Game
 		until @board.full?
 			@board.display
 			turn
+			for player in [@player_1, @player_2]
+				if @board.win?(player)
+					@board.display
+					return win(player)
+				end
+			end
 		end
-		puts "\nIts a draw!"
+		return "Its a draw!"
 	end
 
 	def turn
@@ -30,7 +36,10 @@ class Game
 			@num_turns += 1
 			@board.place(input.to_i, player.marker)
 		end
+	end
 
+	def win(player)
+		return "#{player.name} has won this game."
 	end
 
 end
