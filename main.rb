@@ -1,18 +1,17 @@
-require_relative 'game.rb'
+require_relative 'game'
 
 def play
-	continue = true
-	while continue
-		puts "Lets Play Tick-Tack-Toe!!! \n\n"
-		game = Game.new
-		result = game.play
-		puts "\n#{result}"
+  puts "Lets Play Tick-Tack-Toe!!! \n\n"
+  game = Game.new
+  result = game.play
+  puts "\n#{result}"
+  repeat
+end
 
-		puts "\nWould you like to play a new game? Press 'y' for yes or any other key for no"
-		choice = gets.chomp.downcase
-		continue = false unless choice == 'y'
-		puts "\n\n"
-	end
+def repeat
+  puts "\nWould you like to play a new game? Press 'y' for yes or any other key for no"
+  choice = gets.chomp.downcase
+  play if choice == 'y'
 end
 
 play
