@@ -1,3 +1,4 @@
+[![Run on repl.it](https://repl.it/badge/github/MBM1607/ruby-tick-tack-toe)](https://repl.it/@MBM1607/ruby-tick-tack-toe#)
 
 # INTRODUCTION
 
